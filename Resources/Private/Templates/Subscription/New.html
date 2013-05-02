@@ -1,3 +1,5 @@
+{namespace captcha=Tx_CaptchaViewhelper_ViewHelpers}
+
 <f:layout name="Form" />
 
 <f:section name="Main">
@@ -90,6 +92,23 @@
 			        </f:form.validationResults>
 				</div>
 		    </f:if>
+		</f:if>
+
+		<f:if condition="{additionalFields.captcha}">
+			<div class="form-row">
+				<div class="form-label">
+					<label>{f:translate(key: 'label.captcha')}</label>
+				</div>
+				<div class="form-field">
+					<captcha:captcha />
+					<f:form.textfield id="captcha" property="captcha" />
+				</div>
+				<f:form.validationResults for="subscription.captcha">
+					<f:for each="{validationResults.flattenedErrors}" as="error">
+						<div class="form-error">{error.0.message}</div>
+					</f:for>
+				</f:form.validationResults>
+			</div>
 		</f:if>
 
 	    <f:form.submit name="submit" value="{f:translate(key: 'label.subscribe')}" />
