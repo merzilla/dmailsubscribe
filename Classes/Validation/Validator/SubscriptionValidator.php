@@ -76,9 +76,23 @@ class Tx_Dmailsubscribe_Validation_Validator_SubscriptionValidator extends Tx_Ex
 		$requiredFields = $this->settingsService->getSetting('requiredFields', array(), ',');
 		$lookupPageIds = $this->settingsService->getSetting('lookupPids', array(), ',');
 
-		/** @var Tx_Dmailsubscribe_Validation_Validator_EmailNotRegisteredValidator $emailNotRegisteredValidator */
+		$additionalFields = array();
+		if (TRUE === isset($settings['additionalFields']) && '' !== $settings['additionalFields']) {
+			$additionalFields  = t3lib_div::trimExplode(',', $settings['additionalFields']);
+		}
+
+		$lookupPageIds = array();
+		if (TRUE === isset($settings['lookupPids']) && '' !== $settings['lookupPids']) {
+			$lookupPageIds = t3lib_div::trimExplode(',', $settings['lookupPids']);
+		}
+
 		$emailNotRegisteredValidator = $this->objectManager->get('Tx_Dmailsubscribe_Validation_Validator_EmailNotRegisteredValidator', array('lookupPageIds' => $lookupPageIds));
 		$this->addPropertyValidator('email', $emailNotRegisteredValidator);
+
+		if (TRUE === in_array('captcha', $additionalFields) && FALSE === empty($settings['captchaValidatorClass'])) {
+			$captchaValidator = $this->objectManager->get($settings['captchaValidatorClass']);
+			$this->addPropertyValidator('captcha', $captchaValidator);
+		}
 
 		foreach ($requiredFields as $field) {
 			/** @var Tx_Extbase_Validation_Validator_NotEmptyValidator $notEmptyValidator */
