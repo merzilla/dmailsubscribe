@@ -16,6 +16,8 @@ plugin.tx_dmailsubscribe {
 		additionalFields = gender, name, company, receiveHtml, categories
 		# cat=plugin.tx_dmailsubscribe//a; type=string; Label=Fields which are required to be filled
 		requiredFields = gender, name
+		# cat=plugin.tx_dmailsubscribe//a; type=string; Label=Name of validator class to use
+		captchaValidatorClass =
 		# cat=plugin.tx_dmailsubscribe//a; type=boolean; Label=Mute confirmation errors
 		muteConfirmationErrors = 1
 		# cat=plugin.tx_dmailsubscribe//a; type=boolean; Label=Mute unsubscription errors

@@ -33,6 +33,7 @@ plugin.tx_dmailsubscribe {
 	settings {
 		additionalFields = {$plugin.tx_dmailsubscribe.settings.additionalFields}
 		requiredFields = {$plugin.tx_dmailsubscribe.settings.requiredFields}
+		captchaValidatorClass = {$plugin.tx_dmailsubscribe.settings.captchaValidatorClass}
 		muteConfirmationErrors = {$plugin.tx_dmailsubscribe.settings.muteConfirmationErrors}
 		muteUnsubscribeErrors = {$plugin.tx_dmailsubscribe.settings.muteUnsubscribeErrors}
 		lookupPids = {$plugin.tx_dmailsubscribe.settings.lookupPids}
