@@ -69,6 +69,11 @@ class Tx_Dmailsubscribe_Domain_Model_Subscription extends Tx_Extbase_DomainObjec
 	 */
 	protected $hidden;
 
+	/**
+	 * @var string
+	 */
+	protected $captcha;
+
 	public function __construct() {
 		$this->categories = new Tx_Extbase_Persistence_ObjectStorage();
 		$this->receiveHtml = TRUE;
@@ -188,4 +193,18 @@ class Tx_Dmailsubscribe_Domain_Model_Subscription extends Tx_Extbase_DomainObjec
 		return (boolean) $this->hidden;
 	}
 
+	/**
+	 * @param string $captcha
+	 * @return void
+	 */
+	public function setCaptcha($captcha) {
+		$this->captcha = $captcha;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getCaptcha() {
+		return $this->captcha;
+	}
 }
