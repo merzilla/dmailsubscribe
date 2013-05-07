@@ -75,16 +75,7 @@ class Tx_Dmailsubscribe_Validation_Validator_SubscriptionValidator extends Tx_Ex
 
 		$requiredFields = $this->settingsService->getSetting('requiredFields', array(), ',');
 		$lookupPageIds = $this->settingsService->getSetting('lookupPids', array(), ',');
-
-		$additionalFields = array();
-		if (TRUE === isset($settings['additionalFields']) && '' !== $settings['additionalFields']) {
-			$additionalFields  = t3lib_div::trimExplode(',', $settings['additionalFields']);
-		}
-
-		$lookupPageIds = array();
-		if (TRUE === isset($settings['lookupPids']) && '' !== $settings['lookupPids']) {
-			$lookupPageIds = t3lib_div::trimExplode(',', $settings['lookupPids']);
-		}
+		$additionalFields = $this->settingsService->getSetting('additionalFields', array());
 
 		$emailNotRegisteredValidator = $this->objectManager->get('Tx_Dmailsubscribe_Validation_Validator_EmailNotRegisteredValidator', array('lookupPageIds' => $lookupPageIds));
 		$this->addPropertyValidator('email', $emailNotRegisteredValidator);
