@@ -32,6 +32,8 @@
             <label index="message.subscribe.success">You have been subscribed to the newsletter. A confirmation email
                 has been sent.
             </label>
+            <label index="message.subscribe.email_already_registered">The given email address is already registered.
+            </label>
             <label index="message.confirm.confirmation_code_invalid">The provided confirmation code is invalid.</label>
             <label index="message.confirm.subscription_not_found">This subscription could not be found or is already
                 confirmed.

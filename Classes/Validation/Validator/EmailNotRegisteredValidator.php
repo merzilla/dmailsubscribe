@@ -78,7 +78,7 @@ class EmailNotRegisteredValidator extends AbstractValidator
         $result = $repository->findByEmail($value, $this->options['lookupPageIds']);
 
         if (null !== $result) {
-            $this->addError('The given email address is already registered.', 1367223995);
+            $this->addError(\TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('message.subscribe.email_already_registered', 'dmailsubscribe'), 1367223995);
             return false;
         }
 
