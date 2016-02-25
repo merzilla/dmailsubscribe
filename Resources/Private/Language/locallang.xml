@@ -21,6 +21,7 @@
             <label index="flexforms.from_email">Email of sender used in confirmation emails</label>
             <label index="flexforms.from_name">Name of sender used in confirmation emails</label>
             <label index="flexforms.subject">Subject of subscription confirmation email</label>
+            <label index="label.heaader">Newsletter Subscription</label>
             <label index="label.gender">Title</label>
             <label index="label.name">Name</label>
             <label index="label.company">Company</label>
@@ -28,9 +29,9 @@
             <label index="label.receiveHtml">HTML emails</label>
             <label index="label.categories">Categories</label>
             <label index="label.subscribe">Subscribe</label>
-            <label index="label.unsubscribe">Unsubscribe</label>
+            <label index="label.unsubscribe">Click here if you wish to unsubscribe.</label>
             <label index="message.subscribe.success">You have been subscribed to the newsletter. A confirmation email
-                has been sent.
+                has been sent to your email address %s
             </label>
             <label index="message.subscribe.email_already_registered">The given email address is already registered.
             </label>
@@ -43,6 +44,15 @@
             </label>
             <label index="message.unsubscribe.subscription_not_found">This subscription could not be found.</label>
             <label index="message.unsubscribe.success">You have been successfully unsubscribed from our newsletter.
+            </label>
+            <label index="label.email.confirm_subscription">Confirm subscription</label>
+            <label index="label.email.discard_subscription">Unsubscribe</label>
+            <label index="email.headline">Success</label>
+            <label index="email.thank_you">You have been subscribed to our newsletter.</label>
+            <label index="email.confirm_text">Please click the following link
+                to confirm your subscription:
+            </label>
+            <label index="email.discard_text">To unsubscribe from our newsletter please click the following link:
             </label>
         </languageKey>
     </data>

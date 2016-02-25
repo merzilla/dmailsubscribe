@@ -5,11 +5,14 @@
 <f:layout name="PlainEmail" />
 
 <f:section name="Main">
-Success
+<f:translate key="email.headline" />
 
-You have been subscribed to our newsletter. Please click the following link
-to confirm your subscription:  <d:uri.confirm subscriptionUid="{subscription.uid}" confirmationCode="{confirmationCode}" />
+<f:translate key="email.thank_you" />
 
-To unscubscribe from our newsletter click the following link: <d:uri.unsubscribe subscriptionUid="{subscription.uid}" confirmationCode="{confirmationCode}" />
+<f:translate key="email.confirm_text" />
+<d:uri.confirm subscriptionUid="{subscription.uid}" confirmationCode="{confirmationCode}" />
+
+<f:translate key="email.discard_text" />
+<d:uri.unsubscribe subscriptionUid="{subscription.uid}" confirmationCode="{confirmationCode}" />
 </f:section>
 </html>

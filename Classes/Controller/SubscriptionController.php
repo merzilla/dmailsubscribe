@@ -194,7 +194,7 @@ class SubscriptionController extends ActionController
             $templateVariables
         );
 
-        $message = LocalizationUtility::translate('message.subscribe.success', $this->extensionName);
+        $message = LocalizationUtility::translate('message.subscribe.success', $this->extensionName, array(0 => $subscription->getEmail()));
         $this->addFlashMessage($message);
 
         $this->redirect('message');
